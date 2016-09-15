@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="module.auth">
+
+<head>
+    <title> forge log in </title>
+    <!-- jQuery and Bootstrap -->
+    <script src="//code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+    <!-- Angular main and route CDN -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+
+    <!-- my app scripts -->
+    <script src="scripts/module.auth.js"></script>
+
+  <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <!-- Custom styles  ----------->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/icomoon.css">
+  <link rel="stylesheet" href="assets/css/animate-custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/modernizr.custom.js"></script>
+</head>
+    <body ng-controller="module.auth.controller as auth" class="containter">
+
+        <div id="navbar-main">
+            <!-- Nav tabs -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span>
+                        <img src="assets/img/logoGrey.png" class="iconSmall"></span>
+                  </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li><span>
+                          <img src="assets/img/logoGrey.png" class="iconNav">
+                      </span></li>
+                    <li><a href="#login" aria-controls="home" role="tab" data-toggle="tab" class="smoothScroll">Log In</a></li>
+                    <li> <a href="#register" aria-controls="profile" role="tab" data-toggle="tab" class="smoothScroll"> Register</a></li>
+                    <li><a href="/" class="icon icon-home">
+                    </a></li>
+                </ul>
+
+            <!-- Tab panes -->
+        <div style="width: 30em">
+            <div class="tab-content">
+                <div id="login" role="tabpanel" class="tab-pane active">
+                    <form ng-submit="auth.login.submit($event)">
+                        <br>
+                        <br>
+                        <h1 style="color: white">Login!</h1>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="email">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">@</div>
+                                <input required placeholder="Email" class="form-control" type="text" ng-model="auth.payload.email"/>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="i con icon-lock"></span></div>
+                                <input required placeholder="Password" class="form-control" type="password" ng-model="auth.payload.password"/>
+                            </div>
+                        </fieldset>
+                        <input class="btn btn" type="submit" value="Login" style="background-color: #ff6d00; color: white">
+                        <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+                    </form>
+                </div>
+                <div id="register" role="tabpanel" class="tab-pane">
+                    <form ng-submit="auth.register.submit($event)">
+                        <br>
+                        <br>
+                        <h1 style="color: white">Register!</h1>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="email">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">@</div>
+                                <input required placeholder="Email" class="form-control" type="text" ng-model="auth.payload.email"/>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="i con icon-lock"></span></div>
+                                <input required placeholder="Create a password" class="form-control" type="password" ng-model="auth.payload.password"/>
+                            </div>
+                        </fieldset>
+                        <button class="btn btn-primary" type="submit">Register</button>
+                        <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<div class="container" id="portfolio" name="portfolio">
+<br>
+    <div class="row">
+        <br>
+        <br>
+        <br>
+        <h1 class="centered">What type of goal would you like to create?</h1>
+        <br>
+        <hr>
+        <br>
+        <br>
+    </div><!-- /row -->
+    <div class="container">
+    <div class="row">
+
+        <!-- Strength Goal -->
+        <div class="col-md-4 ">
+            <div class="grid mask">
+                <figure style="text-align: center">
+                    <div class="iconDivPhys">
+                        <img class="img-responsive" src="assets/img/strength.png" alt="">
+                    </div>
+                    <figcaption>
+                        <h5>Strength Goal</h5>
+                        <a data-toggle="modal" href="#strModal" class="btn btn-primary btn-lg">Create</a>
+                    </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+
+        <!-- Speed Goal -->
+        <div class="col-md-4">
+            <div class="grid mask">
+                <figure style="text-align: center">
+                    <div class="iconDivPhys">
+                        <img class="img-responsive" src="assets/img/speed.png" alt="">
+                    </div>
+                    <figcaption>
+                        <h5>Speed Goal</h5>
+                        <a data-toggle="modal" href="#spdModal" class="btn btn-primary btn-lg">Create</a>
+                    </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+
+        <!-- Financial Goal -->
+        <div class="col-md-4">
+            <div class="grid mask">
+                <figure style="text-align: center">
+                    <div class="iconDivFin">
+                        <img class="img-responsive" src="assets/img/money.png" alt="">
+                    </div>
+                    <figcaption>
+                        <h5>Financial Goal</h5>
+                        <a data-toggle="modal" href="#finModal" class="btn btn-primary btn-lg">Create</a>
+                    </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+            </div><!-- /grid-mask -->
+        </div><!-- /col -->
+    </div><!-- /row -->
+
+
+    </div><!-- /row -->
+</div><!-- /row -->
+</div><!-- /container -->
+
+<!-- ===========================Strength Goal Modal start=================================== -->
+                  <div class="modal fade" id="strModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="background-color: #ff6d00">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Create Your Strength Goal</h4>
+                        </div>
+                        <div class="modal-body">
+<!-- ====================== Strength Goal Form start============================================== -->
+                           <form ng-submit="gCtrl.makeAGoal('strength')">
+                               <span>Name of Goal</span><input class="form-control" ng-model="gCtrl.newGoal.name" placeholder="Deadlift">
+                               <br>
+                               <span>Goal Amount (lbs)</span><input class="form-control"  ng-model="gCtrl.newGoal.goalAmount" type="number" placeholder="450">
+                               <br>
+                               <span>Start Point (lbs)</span><input class="form-control" type="number" ng-model="gCtrl.newGoal.startAmount" placeholder="300">
+                               <br>
+                               <span>By When</span><input class="form-control"  ng-model="gCtrl.newGoal.byWhen" type="date" placeholder="12/31/2016">
+                               <br>
+                               <input type="submit">
+                           </form>
+  <!-- ======================Strength Goal Form end================================================= -->
+                        </div>
+                        <div class="modal-footer"></div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+<!-- ===========================Strength Goal Modal end=================================== -->
+
+<!-- ===========================Speed Goal Modal start=================================== -->
+                  <div class="modal fade" id="spdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="background-color: #ff6d00">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Create Your Speed Goal</h4>
+                        </div>
+                        <div class="modal-body">
+<!-- ======================Speed Goal Form start============================================== -->
+                           <form ng-submit="gCtrl.makeAGoal('speed')">
+                               <span>Name of Goal</span><input class="form-control" ng-model="gCtrl.newGoal.name" placeholder="Run 100m">
+                               <br>
+                               <span>Goal Amount (min)</span><input class="form-control"  ng-model="gCtrl.newGoal.goalAmount" type="number" placeholder="7.5">
+                               <br>
+                               <span>Start Point (min)</span><input class="form-control" type="number" ng-model="gCtrl.newGoal.startAmount" placeholder="10">
+                               <br>
+                               <span>By When</span><input class="form-control"  ng-model="gCtrl.newGoal.byWhen" type="date" placeholder="12/31/2016">
+                               <br>
+                               <input type="submit">
+                           </form>
+  <!-- ======================Speed Goal Form end================================================= -->
+                        </div>
+                        <div class="modal-footer"></div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+<!-- ===========================Speed Goal Modal end=================================== -->
+
+<!-- ===========================Financial Goal Modal start=================================== -->
+                  <div class="modal fade" id="finModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="background-color: #ff6d00">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Create Your Financial Goal</h4>
+                        </div>
+                        <div class="modal-body">
+<!-- ======================Financial Goal Form start============================================== -->
+                           <form ng-submit="gCtrl.makeAGoal('financial')">
+                               <span>Name of Goal</span><input class="form-control" ng-model="gCtrl.newGoal.name" placeholder="Save for Retirement">
+                               <br>
+                               <span>Goal Amount ($)</span><input class="form-control"  ng-model="gCtrl.newGoal.goalAmount" type="number" placeholder="10,000">
+                               <br>
+                               <span>Start Point ($)</span><input class="form-control" type="number" ng-model="gCtrl.newGoal.startAmount" placeholder="500">
+                               <br>
+                               <span>By When</span><input class="form-control"  ng-model="gCtrl.newGoal.byWhen" type="date" placeholder="12/31/2016">
+                               <br>
+                               <input type="submit">
+                           </form>
+  <!-- ======================Financial Goal Form end================================================= -->
+                        </div>
+                        <div class="modal-footer"></div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+<!-- ===========================Financial Goal Modal end=================================== -->
+        <div style="height: 250px;"></div>
